@@ -10,14 +10,15 @@ xcommentx
 */
 
 /**
- * Generated xdatetimex by test generator based on xclassfqdnx
+ * Generated xdatetimex by Dataground recursive-phpunit-test-generator
+ * @see https://github.com/dataground/recursive-phpunit-test-generator
  *
+ * Skeleton test based on xclassfqdnx
  * Class xclassnamex
  * @package xnamespacex
  */
 class xclassnamex extends PHPUnit_Framework_TestCase
 {
-
     /**
      * @type xsourceclassnamex
      */
@@ -46,6 +47,6 @@ class xclassnamex extends PHPUnit_Framework_TestCase
      */
     public function testTodo()
     {
-        $this->markTestSkipped('Tests not implemented yet for xsourceclassnamex');
+        $this->markTestSkipped('Tests not implemented yet for class xsourceclassnamex');
     }
 }
