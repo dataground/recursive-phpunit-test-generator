@@ -10,14 +10,19 @@ echo 'TEST GENERATOR v0.2'.PHP_EOL;
 echo 'By Dataground 2015 (c)'.PHP_EOL;
 
 if (!isset($argv[1])) {
-    die('Usage '.__FILE__.' [project directory]'.PHP_EOL);
+    die('Usage '.__FILE__.' [project directory] [output directory (optional)]'.PHP_EOL);
 }
 
-$baseDir = $argv[1];
+$baseDir = rtrim($argv[1],'/');
 
-// Look for standard locations
+if (isset($argv[2]) || trim($argv[2]) !== '') {
+    $destDir = rtrim($argv[2],'/');
+}
+else {
+    $destDir = $baseDir.'/tests';
+}
+
 $sourceDir = $baseDir.'/src';
-$destDir = $baseDir.'/tests/unit';
 
 if (!is_file($baseDir.'/composer.json')) {
     die($baseDir.'/composer.json not found');
@@ -53,8 +58,9 @@ foreach ($files as $file) {
 
     $fileParts = explode('/', $file);
 
-    // @todo check for PHP file extension
-    if (is_file($sourceDir . $file)) {
+    if (is_file($sourceDir . $file) && substr($file, -4) === '.php') {
+
+        echo $file.PHP_EOL;
 
         $fileName = str_replace('.php', 'Test.php', array_pop($fileParts));
         $filePath = trim(join('/', $fileParts), '/');
@@ -79,10 +85,10 @@ foreach ($files as $file) {
                 $methodComments = array();
 
                 foreach ($methods as $method) {
-                    $methodComments[] = '@covers ' . $method->name;
+                    $methodComments[] = '// @covers ' . $method->getDeclaringClass()->getName() . '::'. $method->name;
                 }
 
-                $template = file_get_contents(__DIR__ . '/test.phpt');
+                $template = file_get_contents(__DIR__ . '/../templates/test.phpt');
 
                 $tags = array(
                     'xnamespacex' => str_replace(array('/', '.php'), array('\\', ''), $filePath),

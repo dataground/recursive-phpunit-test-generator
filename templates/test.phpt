@@ -4,10 +4,8 @@ namespace xnamespacex;
 use PHPUnit_Framework_TestCase;
 use xclassfqdnx;
 
-/*
-@TODO Public API to cover:
+// @TODO Public API to cover:
 xcommentx
-*/
 
 /**
  * Generated xdatetimex by Dataground recursive-phpunit-test-generator
