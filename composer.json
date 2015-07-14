@@ -10,6 +10,13 @@
   "bin": [
     "bin/testcreator.php"
   ],
+  "keywords": [
+    "phpunit",
+    "generator",
+    "skeleton",
+    "unittest",
+    "test"
+  ],
   "require": {
     "php": "5.5.*"
   }
