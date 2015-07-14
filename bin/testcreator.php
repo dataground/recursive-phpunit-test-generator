@@ -3,11 +3,12 @@
  *  PHPUnit test generator
  *  Creates tests for all classes in the /src dir
  *  Uses standard convention for the naming
- *  Will skip existing classes
+ *  Will skip existing test lasses
  */
 
-echo 'TEST GENERATOR v0.2'.PHP_EOL;
-echo 'By Dataground 2015 (c)'.PHP_EOL;
+echo 'TEST GENERATOR v'.file_get_contents(__DIR__.'/../version.txt').PHP_EOL;
+echo 'By Dataground 2015 (https://github.com/dataground/recursive-phpunit-test-generator)'.PHP_EOL;
+echo PHP_EOL;
 
 if (!isset($argv[1])) {
     die('Usage '.__FILE__.' [project directory] [output directory (optional)]'.PHP_EOL);
@@ -60,7 +61,7 @@ foreach ($files as $file) {
 
     if (is_file($sourceDir . $file) && substr($file, -4) === '.php') {
 
-        echo $file.PHP_EOL;
+        // echo $file.PHP_EOL;
 
         $fileName = str_replace('.php', 'Test.php', array_pop($fileParts));
         $filePath = trim(join('/', $fileParts), '/');
@@ -75,9 +76,6 @@ foreach ($files as $file) {
 
                 if (!is_dir($destDir . '/' . $filePath)) {
                     mkdir($destDir . '/' . $filePath, 0755, true);
-                }
-                else {
-                    echo 'Directory exists: ' . $destDir . '/' . $filePath . PHP_EOL;
                 }
 
                 $methods = $class->getMethods(ReflectionMethod::IS_PUBLIC);
