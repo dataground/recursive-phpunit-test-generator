@@ -1,10 +1,10 @@
 # PHPUnit test generator
 Recursively create PhpUnit test skeletons by convention for a composer project using PSR autoloading and naming.
-It will generate skeleton tests in the `tests/unit` folder for all classes in the `src` folder recursively.
+It will generate skeleton tests for all classes in the source folder recursively.
 It will skip interfaces and existing tests. Target folders will be created based on source folders.
 
 ## Usage
-    php testcreator.php [Composer project root]
+    php bin/testcreator.php /my/project/src /my/project/tests/unit
     
 ### Example class (src/My/NameSpace/Foo.php)
     
@@ -24,7 +24,7 @@ It will skip interfaces and existing tests. Target folders will be created based
     
     /*
     @TODO Public API to cover:
-    bar()
+    @covers My\NameSpace\Foo::bar()
     */
     
     class FooTest {
@@ -62,4 +62,6 @@ It will skip interfaces and existing tests. Target folders will be created based
     
     }
 
-    
+## TODO
+* Put logic in classes
+* Add tests (duh..)  
