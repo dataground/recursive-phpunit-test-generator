@@ -1,7 +1,7 @@
 {
   "name": "dataground/recursive-phpunit-test-generator",
   "description": "Recursively create PhpUnit test skeletons by convention for a composer project using PSR autoloading and naming",
-  "license": "GPL",
+  "license": "MIT",
   "authors": [
     {
       "name": "Pim Koeman"
