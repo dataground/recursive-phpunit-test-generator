@@ -4,7 +4,7 @@ It will generate skeleton tests for all classes in the source folder recursively
 It will skip interfaces and existing tests. Target folders will be created based on source folders.
 
 ## Usage
-    php bin/testcreator.php /my/project /my/project/tests/unit
+    php bin/testcreator /my/project /my/project/tests/unit
     
 ### Example class (src/My/NameSpace/Foo.php)
     
