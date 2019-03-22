@@ -8,7 +8,7 @@
     }
   ],
   "bin": [
-    "bin/testcreator.php"
+    "bin/testcreator"
   ],
   "keywords": [
     "phpunit",
