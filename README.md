@@ -4,7 +4,7 @@ It will generate skeleton tests for all classes in the source folder recursively
 It will skip interfaces and existing tests. Target folders will be created based on source folders.
 
 ## Usage
-    php bin/testcreator.php /my/project/src /my/project/tests/unit
+    php bin/testcreator.php /my/project /my/project/tests/unit
     
 ### Example class (src/My/NameSpace/Foo.php)
     
@@ -27,7 +27,7 @@ It will skip interfaces and existing tests. Target folders will be created based
     @covers My\NameSpace\Foo::bar()
     */
     
-    class FooTest {
+    class FooTest extends TestCase {
     
         /**
          * @type My\NameSpace\Foo;
@@ -37,7 +37,7 @@ It will skip interfaces and existing tests. Target folders will be created based
         /**
          *
          */
-        protected function setUp()
+        protected function setUp():void
         {
             parent::setUp();
             // $this->foo = new Foo( ... );
@@ -46,7 +46,7 @@ It will skip interfaces and existing tests. Target folders will be created based
         /**
          *
          */
-        protected function tearDown()
+        protected function tearDown():void
         {
             // $this->foo = null;
             parent::tearDown();

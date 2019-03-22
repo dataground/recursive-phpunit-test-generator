@@ -1,21 +1,21 @@
-<?php
+<?php declare(strict_types=1);
 namespace xnamespacex;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use xclassfqdnx;
 
 // @TODO Public API to cover:
 xcommentx
 
 /**
- * Generated xdatetimex by Dataground recursive-phpunit-test-generator
+ * Generated xdatetimex by recursive-phpunit-test-generator
  * @see https://github.com/dataground/recursive-phpunit-test-generator
  *
  * Skeleton test based on xclassfqdnx
  * Class xclassnamex
  * @package xnamespacex
  */
-class xclassnamex extends PHPUnit_Framework_TestCase
+final class xclassnamex extends TestCase
 {
     /**
      * @type xsourceclassnamex
@@ -25,7 +25,7 @@ class xclassnamex extends PHPUnit_Framework_TestCase
     /**
      *
      */
-    protected function setUp()
+    protected function setUp():void
     {
         parent::setUp();
         // $this->xsourceclassnamelowerx = new xsourceclassnamex( ... );
@@ -34,7 +34,7 @@ class xclassnamex extends PHPUnit_Framework_TestCase
     /**
      *
      */
-    protected function tearDown()
+    protected function tearDown():void
     {
         // $this->xsourceclassnamelowerx = null;
         parent::tearDown();
